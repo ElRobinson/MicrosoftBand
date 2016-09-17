@@ -16,6 +16,7 @@ import com.microsoft.band.sensors.BandAccelerometerEventListener;
 import com.microsoft.band.sensors.BandSensorEvent;
 import com.microsoft.band.sensors.SampleRate;
 
+import android.util.Log;
 import android.view.View;
 import android.os.AsyncTask;
 import android.view.View.OnClickListener;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class acelerometer extends AppCompatActivity {
+public class Acelerometro extends AppCompatActivity {
 
     private BandClient client = null;
     private Button btnStart;
@@ -50,11 +51,8 @@ public class acelerometer extends AppCompatActivity {
                 float pegaY = event.getAccelerationY();
                 float pegaZ = event.getAccelerationZ();
 
-
-
                 appendToUI(String.format(" X = %.3f \n Y = %.3f\n Z = %.3f", pegaX,
                         pegaY,pegaZ));
-
 
                 guardaGrafico(event.getAccelerationX(),
                         event.getAccelerationY(),
@@ -66,7 +64,7 @@ public class acelerometer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_acelerometer);
 
         final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         this.mWakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
@@ -76,6 +74,7 @@ public class acelerometer extends AppCompatActivity {
         txtInfo = (TextView) findViewById(R.id.txtInfo);
         btnStart = (Button) findViewById(R.id.btnStart);
         btnChart = (Button) findViewById(R.id.btnChart);
+
         btnStart.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
