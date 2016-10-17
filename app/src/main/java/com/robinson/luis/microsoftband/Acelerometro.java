@@ -26,7 +26,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Acelerometro extends AppCompatActivity {
 
     private BandClient client = null;
@@ -199,7 +198,6 @@ public class Acelerometro extends AppCompatActivity {
     }
 
     public void guardaGrafico(float x,float y,float z){
-
 
         //Log.i("sei lá","Aqui no x deu: " + pegaX);
         //Log.i("sei lá","Aqui no timer deu: " + contTimer);

@@ -9,9 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startActivityAcelerometer(View view) {
-        Intent intent = new Intent(this, acelerometer.class);
+        Intent intent = new Intent(this, Acelerometro.class);
         startActivity(intent);
     }
 
